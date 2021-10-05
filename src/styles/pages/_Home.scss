@@ -1,0 +1,11 @@
+.home {
+	.loading {
+		margin: 10% 45%;
+		color: #ffffffff;
+		font-size: 2rem;
+		height: 75vh;
+		@include for-mobile-layout {
+			margin: 2em 5em;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.forecast-preview {
+    @include center;
+    font-size: 1.5rem;
+    flex-basis: 20%;
+    color: #fff;
+    padding: 2rem;
+    flex-direction: column;
+    transition: 0.3s all;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    @include for-normal-layout {
+            font-size: 1rem;
+            border-right: none;
+        
+    }
+    .img {
+        max-height: 2.5em;
+    }
+    .day {
+        font-size: 1.2em;
+        text-transform: uppercase;
+        color: #e0aa1f;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+   
+}

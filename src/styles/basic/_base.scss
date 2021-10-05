@@ -1,0 +1,83 @@
+* {
+    // margin: 0;
+    // padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    // height: 100%;
+}
+
+html {
+    // height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    &:active {
+        transform: scale(0.99);
+    }
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+.Night {
+    background: url("../../assets/imgs/bg2.png")  fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Day {
+    background: url("../../assets/imgs/bg1.png")  fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: scale(1);
+    }
+
+    25%,
+    75% {
+        transform: scale(1.2);
+    }
+}

@@ -1,0 +1,19 @@
+.favorite-preview {
+    @include center;
+    box-shadow: 0 0 10px 0 rgba( 0,0,0,.3 );
+    background-color: rgba( 0,0,0,.5 );
+    padding: 2rem;
+    flex-direction: column;
+    cursor: pointer;
+    transition: .2s all;
+    &:hover{
+        transform: scale( 1.05 );
+        box-shadow: 0 0 20px 0 rgba( 0,0,0,.5 );
+    }
+
+    .location-img{
+        width: 5em;
+        height: 5em;
+    }
+
+}

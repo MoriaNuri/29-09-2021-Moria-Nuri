@@ -1,0 +1,28 @@
+.favorites {
+    height: 90vh;
+    .favorite-container {
+        @include center;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        margin: 10vh auto auto;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        color: #fff;
+        width: 90vw;
+        max-width: 800px;
+        flex-direction: column;
+        padding: 2rem 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: 0.3s all;
+        .no-fvorites {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .favorites-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+    }
+
+}

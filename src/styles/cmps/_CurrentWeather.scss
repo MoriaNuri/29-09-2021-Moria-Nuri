@@ -1,0 +1,46 @@
+.current-weather {
+    @include center;
+    flex-direction: column;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s all;
+    .title {
+        @include center;
+        .location-title {
+            margin: 0;
+            font-size: 3rem;
+            text-align: center;
+        }
+        .btn-favorite {
+            cursor: pointer;
+            margin-right: 10%;
+            transition: 0.3s all;
+            font-size: 2.3rem;
+            color: #696161;
+            &:hover {
+                font-size: 3rem;
+            }
+        }
+        .isFavorite {
+            color: rgb(187, 85, 85);
+        }
+    }
+
+    .location-weather {
+        width: 282px;
+        @include center;
+        .temperature {
+            font-size: 2.5rem;
+        }
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    @include for-mobile-layout {
+        .btn-favorite {
+            margin-left: 5%;
+        }
+    }
+  
+}
