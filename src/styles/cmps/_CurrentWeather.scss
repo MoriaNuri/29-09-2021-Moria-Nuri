@@ -1,3 +1,16 @@
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: scale(1);
+    }
+
+    25%,
+    75% {
+        transform: scale(1.2);
+    }
+}
+
 .current-weather {
     @include center;
     flex-direction: column;
@@ -13,17 +26,29 @@
             text-align: center;
         }
         .btn-favorite {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            margin-right: 0.5rem;
             cursor: pointer;
-            margin-right: 10%;
             transition: 0.3s all;
-            font-size: 2.3rem;
-            color: #696161;
             &:hover {
-                font-size: 3rem;
+                animation: 0.5s bounce ease-out forwards;
             }
+
+            svg {
+                filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+                height: 2rem;
+                width: 2rem;
+                transition: 0.3s all;
+                fill: #ffffff;
+            }
+           
         }
-        .isFavorite {
-            color: rgb(187, 85, 85);
+        .isFavorite  {
+            svg{
+                fill: #f44336;
+            }
         }
     }
 
@@ -37,10 +62,5 @@
     h3 {
         font-size: 2rem;
     }
-    @include for-mobile-layout {
-        .btn-favorite {
-            margin-left: 5%;
-        }
-    }
-  
+   
 }

@@ -1,9 +1,12 @@
 .favorite-preview {
+    width: 250px;
+    height: 220px;
     @include center;
     box-shadow: 0 0 10px 0 rgba( 0,0,0,.3 );
     background-color: rgba( 0,0,0,.5 );
-    padding: 2rem;
+    // padding: 2rem;
     flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
     transition: .2s all;
     &:hover{
@@ -14,6 +17,7 @@
     .location-img{
         width: 5em;
         height: 5em;
+        @include center;
     }
 
 }

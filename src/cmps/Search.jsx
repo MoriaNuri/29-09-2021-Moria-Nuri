@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadAutoOptions, loadCurrForecast, loadCurrWeather } from '../store/actions/weatherAction';
 import { setToast } from './../store/actions/toastAction';
 import ReactLoading from 'react-loading';
+import place from '../assets/icons/place.svg'
 
 export default function Search() {
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export default function Search() {
             setOpen(false);
             return;
         }
-        setOpen(true);
+        setOpen(true)
         setLoading(true);
         dispatch(loadAutoOptions(value));
     };
@@ -47,39 +48,21 @@ export default function Search() {
         setLoading(false);
     }, [options])
 
-    // const handleClickOutside = e => {
-    //     const { current: inputWrapper } = wrapperRef;
-    //     if (!open) return;
-    //     if (inputWrapper && !inputWrapper.contains(e.target)) {
-    //         setOpen(false)
-    //     }
-    // };
+    const handleClickOutside = e => {
+        const { current: inputWrapper } = wrapperRef;
+        if (!open) return;
+        if (inputWrapper && !inputWrapper.contains(e.target)) {
+            setOpen(false)
+        }
+    };
 
-
-    // const handleKeyup = e => {
-    //     setLoading(true);
-    //     const inputVal = inputRef.current.value.trim();
-    //     // Regex-check if user type in english 
-    //     const isValid = /^(?:[A-Za-z]+|\d+)$/.test(inputVal);
-    //     if (!isValid && inputVal !== '' && e.code !== 'Backspace') {
-    //         dispatch(setToast({ msg: 'Please search only in English!', type: 'error' })); return;
-    //     }
-    //     if (e.code === 'Backspace' && inputVal === '') {
-    //         setOpen(false);
-    //     }
-    //     if (timeoutId) clearTimeout(timeoutId);
-    //     timeoutId = setTimeout(() => {
-    //         setOpen(true)
-    //         dispatch(loadAutoOptions(inputVal))
-    //     }, 500);
-    // }
-
-    // useEffect(() => {
-    //     document.addEventListener('mousedown', handleClickOutside)
-    //     return () => {
-    //         document.removeEventListener('mousedown', handleClickOutside)
-    //     }
-    // }, [open])
+    //  close autoComplete when user click outside
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [open])
 
     const handleSelectOption = selectedOption => {
         inputRef.current.value = selectedOption.LocalizedName;
@@ -108,7 +91,7 @@ export default function Search() {
                 {options.length > 0 && options.map(option => {
                     return (
                         <section className="option" key={option.Key} onClick={() => handleSelectOption(option)}>
-                            <i className="fas fa-map-marker-alt"></i>
+                            <img src={place} alt="" />
                             <span className="location-name">{option.LocalizedName},{option.Country.LocalizedName},{option.AdministrativeArea.LocalizedName}</span>
                         </section>
                     )
