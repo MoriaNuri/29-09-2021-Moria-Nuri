@@ -4,6 +4,7 @@ import { loadAutoOptions, loadCurrForecast, loadCurrWeather } from '../store/act
 import { setToast } from './../store/actions/toastAction';
 import ReactLoading from 'react-loading';
 import place from '../assets/icons/place.svg'
+import search from '../assets/icons/search.svg'
 
 export default function Search() {
     const dispatch = useDispatch();
@@ -74,7 +75,7 @@ export default function Search() {
     return (
         <section className="search" ref={wrapperRef}>
             <div className="box-search">
-                <span className="search-icon"><i className="fas fa-search" /></span>
+            <img src={search} alt="" className="search-icon"/>
                 <input
                     type="text"
                     placeholder="Search Location..."

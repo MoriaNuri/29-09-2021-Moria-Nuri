@@ -1,8 +1,6 @@
 import axios from "axios";
-// import { storageService } from './storage-service';
-
-// const API_KEY = 'jNdyMLl1Ofost8P6PkJIbRgFp8kaNY35'
-const API_KEY = '	8Ny0XNJOvOJIxHC0GumQ7XWKCr0UQEy0'
+const API_KEY = 'jNdyMLl1Ofost8P6PkJIbRgFp8kaNY35'
+// const API_KEY = '	8Ny0XNJOvOJIxHC0GumQ7XWKCr0UQEy0'
 // const API_KEY = '3TfLflH6A25XDEguQ8fv2GAqwWGlanP8'
 const BASE_URL = `https://dataservice.accuweather.com/`
 
