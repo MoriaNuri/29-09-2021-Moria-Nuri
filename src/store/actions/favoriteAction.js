@@ -1,6 +1,6 @@
 import { favoritesService } from '../../services/favorite-service';
 
-export function addLocationToFavorites(location) {
+export function addFavorite(location) {
   console.log(location)
     const favoriteLocation = favoritesService.addLocationToFavorite(location);
     return {
@@ -9,7 +9,7 @@ export function addLocationToFavorites(location) {
     }
   }
   
-  export function deleteLocationFromFavorites(locationId) {
+  export function removeFavorite(locationId) {
     favoritesService.deleteLocationFromFavorites(locationId);
     return {
       type: 'REMOVE_FROM_FAVORITES',
@@ -19,6 +19,6 @@ export function addLocationToFavorites(location) {
 
 
 export default {
-  addLocationToFavorites,
-  deleteLocationFromFavorites
+  addFavorite,
+  removeFavorite
 }
