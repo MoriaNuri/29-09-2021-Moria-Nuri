@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux'
 import { useFavorite } from '../hooks/useFavorites';
+import { Heart } from '../assets/icons/Heart.jsx';
 
-function CurrentWeather({ currWeather}) {
+function CurrentWeather({ currWeather }) {
     const { isCelsius } = useSelector(state => state.preferenceModule)
     const locationIcon = currWeather.weatherIcon < 10 ? `0${currWeather.weatherIcon}` : currWeather.weatherIcon;
     const convertFarhernheitToCelcius = temp => {
@@ -9,13 +10,14 @@ function CurrentWeather({ currWeather}) {
     }
     const cTemp = isCelsius ? convertFarhernheitToCelcius(currWeather.temperature.Imperial.Value) : currWeather.temperature.Imperial.Value;
     const tempUnit = isCelsius ? <>&#8451;</> : <>&#8457;</>;
-    const [ isFavorite, toggleFavorite ] = useFavorite( currWeather );
+    const [isFavorite, toggleFavorite] = useFavorite(currWeather);
 
-   
     return (
         <section className="current-weather">
             <div className="title">
-                <button onClick={ toggleFavorite } className={`btn-favorite ${isFavorite ? 'isFavorite' : ''}`} ><i class="fas fa-heart"></i></button>
+                <button onClick={toggleFavorite} className={`btn-favorite ${isFavorite ? 'isFavorite' : ''}`} >
+                    <Heart/>
+                     </button>
                 <h1 className="location-title">
                     {currWeather.locationName}
                 </h1>

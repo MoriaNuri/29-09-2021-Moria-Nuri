@@ -27,7 +27,6 @@
   }
   .auto-container {
     position: absolute;
-    // width: 95%;
     margin-top: -2px;
     border-radius: 0 0 1rem 1rem;
     overflow: hidden;
@@ -46,9 +45,10 @@
       &:hover {
         background-color: rgba(226, 207, 207, 0.5);
       }
-      i {
-        font-size: 1.2rem;
-      }
+     img{
+       height: 1.2rem;
+       width: 1.2rem;
+     }
       .location-name {
         margin-left: 5px;
       }
