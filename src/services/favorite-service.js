@@ -1,6 +1,5 @@
 import { storageService } from './storage-service';
 var gFavorites = storageService.loadFromStorage('favoriteDB') || [];
-// favorite
 
 export const favoritesService = {
     addLocationToFavorite,

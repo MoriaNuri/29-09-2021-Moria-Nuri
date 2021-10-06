@@ -7,7 +7,6 @@ export const weatherService = {
   getCities,
   getCurrWeather,
   getForecast,
- 
 }
 
 async function getDefaultLocation(location) {

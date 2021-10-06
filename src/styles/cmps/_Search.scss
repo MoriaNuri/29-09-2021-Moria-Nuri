@@ -8,8 +8,7 @@
   width: 500px;
 
   .box-search {
-    display: flex;
-    align-items: center;
+    @include center;
     .search-icon {
       width: 20px;
       height: 20px;

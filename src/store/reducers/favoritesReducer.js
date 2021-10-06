@@ -1,11 +1,8 @@
 const INITIAL_STATE ={
-    // favorites:[]
      favorites: localStorage.favoriteDB ? JSON.parse(localStorage.favoriteDB) : [],
 }
 
-
 export function favoritesReducer (state = INITIAL_STATE, action)  {
-    
     switch (action.type) {
         case "ADD_TO_FAVORITES": {
             console.log(action);

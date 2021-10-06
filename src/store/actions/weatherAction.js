@@ -3,8 +3,7 @@
 import { weatherService } from '../../services/weather-service';
 import { setToast } from './toastAction';
 
-// with the help of 'thunk' we can write async action- all actions will pass through 'thunk' and
-//  return function (that gets a dispatch in parameter) and that will give us access to the store and service
+
 
 export function loadDefaultWeather(defultLocation) {
   return async dispatch => {
@@ -19,7 +18,6 @@ export function loadDefaultWeather(defultLocation) {
     }
   };
 }
-
 
 export function loadAutoOptions(cityName) {
   if (cityName === '') return;
@@ -56,12 +54,4 @@ export function loadCurrForecast(locationKey) {
   };
 }
 
-
-
-
-export function setIsDay() {
-  return {
-    type: 'SET_ISDAY'
-  }
-}
 

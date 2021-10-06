@@ -5,8 +5,6 @@ const INITIAL_STATE = {
   forecast: null,
   favorites: localStorage.favoriteDB ? JSON.parse(localStorage.favoriteDB) : [],
   loading: true,
-  isDay: true
-
 };
 
 export function weatherReducer(state = INITIAL_STATE, action) {
@@ -28,11 +26,6 @@ export function weatherReducer(state = INITIAL_STATE, action) {
         loading: false
       }
 
-    case 'SET_ISDAY':
-      return {
-        ...state,
-        isDay: false
-      }
     case 'ADD_LOCATION_TO_FAV':
       return {
         ...state,

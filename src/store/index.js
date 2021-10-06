@@ -17,6 +17,8 @@ const rootReducer = combineReducers({
 	preferenceModule: preferencesReducer,
 	
 })
+
 // createStore-from redux. return store obj 
-// thunk-***
+// thunk - can write async action- all actions will pass through 'thunk' and
+//  return function (that gets a dispatch in parameter) and that will give us access to the store and service
 export const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))

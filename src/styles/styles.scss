@@ -1,12 +1,10 @@
 // SETUP //
-@import 'setup/functions';
 @import 'setup/mixins';
 @import 'setup/typography';
 @import 'setup/variables';
 
 // BASIC //
 @import 'basic/base';
-@import 'basic/layout';
 
 // COMPONENTS //
 @import 'cmps/Header';
