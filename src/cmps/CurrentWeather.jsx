@@ -16,8 +16,8 @@ function CurrentWeather({ currWeather }) {
         <section className="current-weather">
             <div className="title">
                 <button onClick={toggleFavorite} className={`btn-favorite ${isFavorite ? 'isFavorite' : ''}`} >
-                    <Heart/>
-                     </button>
+                    <Heart />
+                </button>
                 <h1 className="location-title">
                     {currWeather.locationName}
                 </h1>

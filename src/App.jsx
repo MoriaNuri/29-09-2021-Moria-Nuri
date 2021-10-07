@@ -8,6 +8,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { useEffect } from 'react'
 
 function App() {
+  const {mode} = useSelector(state => state.preferenceModule);
   const { currWeather } = useSelector(state => state.weatherModule)
   const dispatch = useDispatch();
   const dayTime = currWeather.isDayTime ? 'Day' : 'Night';
@@ -28,7 +29,7 @@ function App() {
     <>
       {toast && <Toast toast={toast} />}
       <Router>
-        <main className={`App ${dayTime}`}>
+        <main className={`App ${dayTime} ${mode}`}>
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />

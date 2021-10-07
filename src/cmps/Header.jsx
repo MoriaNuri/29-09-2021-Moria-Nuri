@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Logo from '../assets/imgs/logo.png'
+// import DarkMode from '../cmps/DarkMode'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTemp } from '../store/actions/preferencesAction';
@@ -21,6 +22,7 @@ function Header() {
                 <NavLink exact to="/"><img src={Logo} alt="" /></NavLink>
             </div>
             <nav>
+            {/* <DarkMode/> */}
                 <div className="toggle-btn " onClick={() => toggleTemperature()}>{isCelsius ? 'C°' : 'F°'}</div>
                 <NavLink exact to="/" className="nav-link " activeClassName="active">Home</NavLink>
                 <NavLink exact to="/favorites" className="nav-link" activeClassName="active">Favorites</NavLink>

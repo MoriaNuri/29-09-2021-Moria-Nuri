@@ -41,19 +41,23 @@ ul {
     list-style: none;
 }
 
-.Night {
-    background: url("../../assets/imgs/bg2.png")  fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+
+.dark {
+    background-color: #36393f;
+    color: var(#72767d);
 }
 
 .Day {
-    background: url("../../assets/imgs/bg1.png")  fixed;
+    background: url("../../assets/imgs/bg1.png") fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
+.Night {
+    background: url("../../assets/imgs/bg2.png") fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 

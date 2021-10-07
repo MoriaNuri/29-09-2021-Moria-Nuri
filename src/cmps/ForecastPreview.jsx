@@ -10,12 +10,10 @@ export default function ForcastPreview({dailyForecast}) {
           cMinTemp,
           cMaxTemp
         }
-        
     }
 
   const {Icon : icon,IconPhrase: iconPhrase} = dailyForecast.Day
   const locationIcon = icon < 10 ? `0${icon}` : icon
-  // const date = dailyForecast.Date.substring (0, 10);
   const date = new Date(  dailyForecast.Date );
   const day = date.toString().split( ' ' )[0];
   const {Value : cMinTemp} = dailyForecast.Temperature.Minimum
@@ -32,12 +30,6 @@ export default function ForcastPreview({dailyForecast}) {
       />
       <span className="temperatures">
         {celiusTemps.cMinTemp}{tempUnit}/{celiusTemps.cMaxTemp}{tempUnit}</span>
-      {/* <div className="img"> */}
-      {/* </div> */}
-      {/* <div className="forecast-info "> */}
-      {/* <span>{date}</span> */}
-      {/* <span>{iconPhrase}</span> */}
-      {/* </div> */}
     </section>
   );
 }

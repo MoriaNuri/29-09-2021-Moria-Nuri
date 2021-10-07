@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { setToast } from '../store/actions/toastAction';
 import { addFavorite, removeFavorite } from '../store/actions/favoriteAction';
 
 export const useFavorite = (location) => {
@@ -15,11 +16,14 @@ export const useFavorite = (location) => {
     const toggleFavorite = () => {
         const { locationKey } = location
         console.log(locationKey);
-        if (isFavorite())
+        if (isFavorite()) {
             dispatch(removeFavorite(locationKey));
-
-        else
+            dispatch(setToast({ msg: ` ${location.locationName}  delete from favorites`, type: 'success' }))
+            return;
+        } else
             dispatch(addFavorite(location));
+        dispatch(setToast({ msg: ` ${location.locationName}  add to favorites`, type: 'success' }))
+
     }
 
     return [isFavorite(), toggleFavorite];

@@ -8,9 +8,7 @@ function FavoritePreview({ location, visitLocation }) {
   const tempUnit = isCelsius ? <>&#8451;</> : <>&#8457;</>
   const temperature = isCelsius ? location.cTemp : location.fTemp
   const locationIcon = location.icon < 10 ? `0${location.icon}` : location.icon;
-  useEffect(() => {
-    console.log(location);
-  }, [])
+
   return (
     <section className="favorite-preview" onClick={() => visitLocation(location)}>
       {!location && <Loading />}
