@@ -28,7 +28,7 @@ function Home() {
     };
     if (!locationKey || !locationName) return;
     dispatch(loadCurrWeather(location));
-    dispatch(loadCurrForecast(locationKey));
+    dispatch(loadCurrForecast(location));
   },
     [locationKey, locationName, loading]
   );

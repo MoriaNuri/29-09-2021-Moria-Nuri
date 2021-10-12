@@ -15,7 +15,6 @@ const rootReducer = combineReducers({
 	favoriteModule: favoritesReducer,
 	toastModule: toastReducer,
 	preferenceModule: preferencesReducer,
-	
 })
 
 // createStore-from redux. return store obj 

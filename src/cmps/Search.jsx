@@ -30,7 +30,6 @@ export default function Search() {
         dispatch(loadAutoOptions(value));
     };
 
-    // mark to user where to type the search when compenent didMoundt
     useEffect(() => {
         inputRef.current.focus();
     }, []);
@@ -66,6 +65,7 @@ export default function Search() {
     }, [open])
 
     const handleSelectOption = selectedOption => {
+        //set the value input with the current city name
         inputRef.current.value = selectedOption.LocalizedName;
         setOpen(false);
         dispatch(loadCurrWeather(selectedOption));

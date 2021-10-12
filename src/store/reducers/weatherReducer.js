@@ -25,17 +25,8 @@ export function weatherReducer(state = INITIAL_STATE, action) {
         forecast: action.forecast,
         loading: false
       }
-
-    case 'ADD_LOCATION_TO_FAV':
-      return {
-        ...state,
-        favorites: [...state.favorites, action.favLocation]
-      }
-    case 'DELETE_LOCATION_FROM_FAV':
-      return {
-        ...state,
-        favorites: state.favorites.filter(favLocation => favLocation.id !== action.locationId)
-      }
+      // If no case is found  return the state-To prevent the app from crashing and 
+      // because Ridex initially initializes the state without action(undefined)
     default:
       return state;
   }

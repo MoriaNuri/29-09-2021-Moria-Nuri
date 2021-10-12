@@ -6,6 +6,7 @@ import { setToast } from './toastAction';
 
 
 export function loadDefaultWeather(defultLocation) {
+  console.log(defultLocation);
   return async dispatch => {
     try {
       const defaultLocation = await weatherService.getDefaultLocation(defultLocation);
@@ -32,6 +33,7 @@ export function loadAutoOptions(cityName) {
   };
 }
 export function loadCurrWeather(currLocation) {
+  console.log(currLocation);
   return async dispatch => {
     try {
       const currWeather = await weatherService.getCurrWeather(currLocation);
@@ -42,11 +44,10 @@ export function loadCurrWeather(currLocation) {
   };
 }
 
-export function loadCurrForecast(locationKey) {
+export function loadCurrForecast(location) {
   return async dispatch => {
     try {
-      const forecast = await weatherService.getForecast(locationKey);
-      console.log(forecast,'forecast');
+      const forecast = await weatherService.getForecast(location);
       dispatch({ type: 'SET_CURR_FORECAST', forecast });
     } catch (err) {
       dispatch(setToast({ msg: `Can't load forecast`, type: 'error' }));

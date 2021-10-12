@@ -28,24 +28,20 @@ async function getCities(cityName) {
     );
     const options = res.data;
     if (options.length === 0) {
-      console.log('no options');
       throw Error(`No options Available for ${cityName}`);
     }
     return options;
   } catch (err) {
-    console.log(err);
     throw err
   }
 }
 async function getCurrWeather(location) {
-  console.log(location);
-  let locationName=location.AdministrativeArea.LocalizedName
+  let locationName=location.LocalizedName
   let locationKey= location.Key
   try {
     const res = await axios.get(
       `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${API_KEY}&details=true`
     );
-    console.log(res);
     const {
       IsDayTime: isDayTime,
       WeatherIcon: weatherIcon,
@@ -68,6 +64,7 @@ async function getCurrWeather(location) {
 
 // Forecast for 5 day
 async function getForecast(location) {
+  console.log(location);
   const { Key } = location;
   try {
     const res = await axios.get(

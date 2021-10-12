@@ -8,13 +8,11 @@ export const useFavorite = (location) => {
     const dispatch = useDispatch();
 
     const isFavorite = () => {
-        console.log(favorites);
         return favorites.favorites.find(favorite => favorite.id === location.locationKey)
     }
 
     const toggleFavorite = () => {
         const { locationKey } = location
-        console.log(locationKey);
         if (isFavorite()) {
             dispatch(removeFavorite(locationKey));
             dispatch(setToast({ msg: ` ${location.locationName}  delete from favorites`, type: 'success' }))

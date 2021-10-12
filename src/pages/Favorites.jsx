@@ -8,7 +8,6 @@ function Favorites() {
 
     // Go to the home page with the weather details of the clicked location
     const visitLocation = location => {
-        console.log(location);
         const { locationName, id } = location;
         history.push(`/${id}/${locationName}`);
     };

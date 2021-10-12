@@ -15,7 +15,6 @@ function addLocationToFavorite(location) {
         locationName: location.locationName,
         icon: location.weatherIcon
     };
-    console.log(favoriteLocation);
     gFavorites.push(favoriteLocation);
     storageService.saveToStorage('favoriteDB', gFavorites)
     return favoriteLocation;
