@@ -15,6 +15,12 @@ export default function Search() {
     const inputRef = useRef();
     const wrapperRef = useRef()
 
+    // handle search value changes
+    useEffect(() => {
+        const timeout = setTimeout(showAutoComplete, 300);
+        return () => { clearTimeout(timeout); }
+    }, [value]);
+
     const showAutoComplete = () => {
         // Check if user type just in English
         const isValid = /^(?:[A-Za-z]+|\d+)$/.test(value);
@@ -34,13 +40,6 @@ export default function Search() {
         inputRef.current.focus();
     }, []);
 
-    // handle search value changes
-    useEffect(() => {
-        const timeout = setTimeout(showAutoComplete, 300);
-        return () => { clearTimeout(timeout); }
-    }, [value]);
-
-    
     useEffect(() => {
         if (options.length === 0 || inputRef.current.value === '') {
             setOpen(false);
@@ -75,7 +74,7 @@ export default function Search() {
     return (
         <section className="search" ref={wrapperRef}>
             <div className="box-search">
-            <img src={search} alt="" className="search-icon"/>
+                <img src={search} alt="" className="search-icon" />
                 <input
                     type="text"
                     placeholder="Search Location..."

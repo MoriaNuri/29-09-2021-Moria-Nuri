@@ -20,9 +20,7 @@ export const useFavorite = (location) => {
         } else
             dispatch(addFavorite(location));
         dispatch(setToast({ msg: ` ${location.locationName}  add to favorites`, type: 'success' }))
-
     }
-
     return [isFavorite(), toggleFavorite];
 
 }

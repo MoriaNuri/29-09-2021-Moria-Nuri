@@ -1,7 +1,7 @@
 
 const INITIAL_STATE = {
   options: [],
-  currWeather: {},
+  currWeather:{},
   forecast: null,
   favorites: localStorage.favoriteDB ? JSON.parse(localStorage.favoriteDB) : [],
   loading: true,
@@ -26,7 +26,7 @@ export function weatherReducer(state = INITIAL_STATE, action) {
         loading: false
       }
       // If no case is found  return the state-To prevent the app from crashing and 
-      // because Ridex initially initializes the state without action(undefined)
+      // because Redux initially initializes the state without action(undefined)
     default:
       return state;
   }

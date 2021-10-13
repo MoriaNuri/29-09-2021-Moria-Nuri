@@ -8,7 +8,7 @@ const useGeoLocation = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Ask the user for permission to get his current position
-//   getCurrPosition gets 2 callbacks, onSuccess and onError
+//   gets 2 callbacks, onSuccess and onError
 // If there is an error I can manage the error logic via onError
 // If the request was successful you can do success logic in onSuccess callback.
   useEffect(() => {
