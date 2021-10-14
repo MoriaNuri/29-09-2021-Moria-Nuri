@@ -23,8 +23,9 @@ export default function Search() {
 
     const showAutoComplete = () => {
         // Check if user type just in English
-        const isValid = /^(?:[A-Za-z]+|\d+)$/.test(value);
-        if (!isValid && value !== '') {
+        const isValid =  /^[a-zA-Z\s]*$/.test(value);
+        // const isValid = /^(?:[A-Za-z]+|\d+)$/.test(value);
+        if (!isValid && value !== '')  {
             dispatch(setToast({ msg: 'Please search only in English!', type: 'error' })); return;
         }
         if (!value) {
