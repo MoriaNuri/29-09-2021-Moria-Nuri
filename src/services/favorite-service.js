@@ -7,7 +7,6 @@ export const favoritesService = {
 }
 
 function addLocationToFavorite(location) {
-    console.log('location in favorite?:', location);
     const favoriteLocation = {
         id: location.locationKey,
         cTemp: location.temperature.Metric.Value,

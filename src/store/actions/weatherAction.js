@@ -6,7 +6,6 @@ import { setToast } from './toastAction';
 
 
 export function loadDefaultWeather(defultLocation) {
-  console.log(defultLocation);
   return async dispatch => {
     try {
       const defaultLocation = await weatherService.getDefaultLocation(defultLocation);
@@ -33,7 +32,6 @@ export function loadAutoOptions(cityName) {
   };
 }
 export function loadCurrWeather(currLocation) {
-  console.log(currLocation);
   return async dispatch => {
     try {
       const currWeather = await weatherService.getCurrWeather(currLocation);

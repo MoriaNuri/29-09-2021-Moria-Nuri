@@ -1,4 +1,5 @@
 header {
+	position: relative;
 	@include center;
 	justify-content: space-between;
 	height: 10%;
@@ -12,6 +13,16 @@ header {
 		margin-top: 10px;
 		width: 60px;
 	}
+	.hamburger {
+		@include center;
+		font-size: 2rem;
+		position: fixed;
+		right: 20px;
+		top: 5px;
+		display: none;
+		cursor: pointer;
+	}
+
 	nav {
 		@include center;
 		.toggle-btn {
@@ -40,8 +51,29 @@ header {
 			}
 		}
 	}
-	@include for-narrow-layout {
-		flex-direction: column;
-		padding: 1em;
+
+	@include for-mobile-layout {
+		.hamburger {
+			display: inline;
+			// position: fixed;
+			padding-top: 10px;
+			margin-left: 10px;
+		}
+		nav {
+			display: none;
+			transition: 0.6s ease-in-out;
+		}
+		.show-menu {
+			z-index: 10;
+			display: flex;
+			flex-direction: column;
+			width: 30vw;
+			height: 100px;
+			position: absolute;
+			right: 0;
+			top: 76px;
+			border-radius: 5px;
+			background-color: rgba(156, 164, 167, 0.712);
+		}
 	}
 }

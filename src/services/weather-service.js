@@ -2,6 +2,7 @@ import axios from "axios";
 
 const API_KEY = '	8Ny0XNJOvOJIxHC0GumQ7XWKCr0UQEy0'
 const BASE_URL = `https://dataservice.accuweather.com/`
+var cancelToken;
 
 export const weatherService = {
   getDefaultLocation,
@@ -22,9 +23,15 @@ async function getDefaultLocation(location) {
 
 
 async function getCities(cityName) {
+  if (typeof cancelToken != typeof undefined) {
+    cancelToken.cancel("Operation canceled due to new request.");
+  }
+  cancelToken = axios.CancelToken.source();
   try {
     const res = await axios.get(
-      `${BASE_URL}locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${cityName}&language=en-us`
+      `${BASE_URL}locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${cityName}&language=en-us`,{
+      cancelToken: cancelToken.token
+      }
     );
     const options = res.data;
     if (options.length === 0) {
@@ -64,7 +71,6 @@ async function getCurrWeather(location) {
 
 // Forecast for 5 day
 async function getForecast(location) {
-  console.log(location);
   const { Key } = location;
   try {
     const res = await axios.get(
